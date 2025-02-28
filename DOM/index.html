@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Practice</title>
+    <style>
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid black;
+        }
+        .highlight {
+            background-color: rgb(243, 243, 159);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="mainDiv">
+        <h2>Main Section</h2>
+        <p id="intro">This is an introduction paragraph.</p>
+
+        <div id="listDiv">
+            <h3>Item List</h3>
+            <ul id="itemList">
+                <li class="item">Item 1</li>
+                <li class="item">Item 2</li>
+                <li class="item">Item 3</li>
+                <li class="item">Item 4</li>
+            </ul>
+        </div>
+
+        <button id="changeTextBtn">Sign Up</button>
+        <button id="addItemBtn">Add Item</button>
+        <button id="highlightBtn">Highlight Items</button>
+    </div>
+
+    <script>
+        // JavaScript Code for Practicing DOM Manipulation
+
+        // 1. Select elements
+        let introPara = document.getElementById("intro");
+        let listDiv = document.getElementById("listDiv");
+        let listItems = document.getElementsByClassName("item");
+        let allListItems = document.querySelectorAll("#itemList li");
+
+        // 2. Modify text content
+        document.getElementById("changeTextBtn").addEventListener("click", function() {
+            introPara.textContent = "Sign Up Successful!";
+        });
+
+        // 3. Add new list item dynamically
+        document.getElementById("addItemBtn").addEventListener("click", function() {
+            let newItem = document.createElement("li");
+            newItem.textContent = "New Item";
+            newItem.classList.add("item");
+            document.getElementById("itemList").appendChild(newItem);
+        });
+
+        // 4. Apply a class to highlight all items
+        document.getElementById("highlightBtn").addEventListener("click", function() {
+            allListItems.forEach(item => item.classList.toggle("highlight"));
+        });
+
+    </script>
+
+</body>
+</html>
