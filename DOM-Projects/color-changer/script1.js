@@ -1,3 +1,4 @@
+/*
 let body =document.querySelector("body");
 let button = document.querySelectorAll(".button")
 button.forEach((button)=>{
@@ -19,4 +20,16 @@ else if(item.target.id === 'blue'){
     body.style.backgroundColor =item.target.id;
 }
     })
-})
+})*/
+
+let body = document.querySelector("body");
+let buttons = document.querySelectorAll(".button");
+
+buttons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+        const color = event.target.id;
+        body.style.backgroundColor = color;
+    });
+});
+
+
