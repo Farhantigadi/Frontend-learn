@@ -26,3 +26,9 @@ for (let key of myarr){
     console.log(key+1);
         
 }
+let body=document.querySelector('body');
+
+let btn=document.querySelector(".btn");
+btn.addEventListener('click',()=>{
+    body.style.backgroundColor = 'black';
+})

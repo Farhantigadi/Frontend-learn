@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is DOm prac</h1>
+    <div id="div">
+        <p>This is div</p>
+    </div>
+    <button class="btn">Click here</button>
+    <script >
+        let button = document.createElement("button");
+        button.setAttribute('class', 'btn');
+        button.innerText = "Click me";
+        let div = document.querySelector('#div');
+        div.prepend(button);
+
+        let body = document.querySelector('body');
+        let currmode = 'light';
+        let btn = document.querySelector(".btn");
+
+        btn.addEventListener('click', () => {
+            if (currmode === 'light') {
+                currmode = 'black';
+                body.style.backgroundColor = 'black';
+            } else {
+                currmode = 'light'; 
+                body.style.backgroundColor = 'white';
+            }
+        });
+    </script>
+</body>
+</html>
